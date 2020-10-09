@@ -1,12 +1,12 @@
 import graphics as gr
-SIZE_X = 400
-SIZE_Y = 400
+SIZE_X = 800
+SIZE_Y = 800
 
 window = gr.GraphWin("Model", SIZE_X, SIZE_Y)
 
 coords = gr.Point(200, 200)
 
-velocity = gr.Point(1, -2)
+velocity = gr.Point(10, -20)
 def add(point_1, point_2):
     new_point = gr.Point(point_1.x + point_2.x,
                          point_1.y + point_2.y)
@@ -28,10 +28,10 @@ def draw_ball(coords):
 
 
 def check_coords(coords, velocity):
-    if coords.x < 0 or coords.x > SIZE_X:
+    if coords.x < 15 or coords.x > SIZE_X-15:
         velocity.x = -velocity.x
 
-    if coords.y < 0 or coords.y > SIZE_Y:
+    if coords.y < 25 or coords.y > SIZE_Y-25:
         velocity.y = -velocity.y
 
 while True:
